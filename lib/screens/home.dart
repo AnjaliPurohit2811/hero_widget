@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Color(0xffe67169),
         leading: Icon(
-          Icons.menu,
+          CupertinoIcons.text_alignleft,
           color: Colors.white,
         ),
         title: Text(
@@ -34,7 +34,7 @@ class HomePage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(10),
             child: Icon(
-              Icons.search,
+              CupertinoIcons.search,
               color: Colors.white,
             ),
           )
@@ -93,7 +93,7 @@ class HomePage extends StatelessWidget {
                 },
                 child: SingleChildScrollView(
                   child: Hero(
-                    tag: 'box',
+                    tag: "code",
                     child: Container(
                       height: 350,
                       width: double.infinity,
@@ -133,6 +133,7 @@ class HomePage extends StatelessWidget {
                               ),
                               Text(
                                 '8 Tasks',
+                                overflow: TextOverflow.ellipsis,
                                 style: TextStyle(color: Colors.grey),
                               ),
                               SizedBox(
@@ -140,6 +141,7 @@ class HomePage extends StatelessWidget {
                               ),
                               Text(
                                 'Custom',
+                                overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 30,
@@ -148,23 +150,7 @@ class HomePage extends StatelessWidget {
                               SizedBox(
                                 height: 9,
                               ),
-                              SingleChildScrollView(
-                                child: Row(
-                                  children: [
-                                    Slider(
-                                      activeColor: Color(0xffe67169),
-                                      value: 0.8,
-                                      onChanged: (value) {},
-                                    ),
-                                    Spacer(),
-                                    Text(
-                                      '80%',
-                                      style: TextStyle(
-                                          color: Colors.black, fontSize: 18),
-                                    ),
-                                  ],
-                                ),
-                              )
+                              LinearProgressIndicator(value: 0.8,color: Color(0xffe67169),),
                             ],
                           ),
                         ),
